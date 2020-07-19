@@ -171,6 +171,8 @@ in
 
   corgi = callPackage ../development/tools/corgi { };
 
+  jlink = callPackage ../development/tools/jlink { };
+
   colorz = callPackage ../tools/misc/colorz { };
 
   comedilib = callPackage ../development/libraries/comedilib {  };
