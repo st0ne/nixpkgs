@@ -18,11 +18,10 @@
 , libXrandr
 }:
 
-#PR: https://github.com/NixOS/nixpkgs/pull/80990
 
 
 let
-  jlinkVersion = "680e";
+  jlinkVersion = "694";
 
   architecture = {
     x86_64-linux = "x86_64";
@@ -31,9 +30,9 @@ let
   }.${stdenv.hostPlatform.system} or (throw "unsupported system ${stdenv.hostPlatform.system}");
 
   sha256 = {
-    x86_64-linux = "0vzzd9vz433zb89rr1y2gidx8d1lkjymmqqh8jb5gw9wfdncdqjz";
-    i686-linux = "0wfb5w237ci4zgygydizlji07w8vq0pjaywfibk4fgnnr5qbi25i";
-    armv7l-linux = "1xwq1ylr6i93qkxrwbk8jv5wa2lvi9ys6zk19ngna7wgwr350nsb";
+    x86_64-linux = "1y1i30y8h9pq345r25wycnfns1zz0y3g7b66a82nx3075zx2n4lm";
+    i686-linux = "1vdfxiwwxxr6vjybd0xl8iq79b5j7kd10bk9j22ghkg7b4mbsjrm";
+    armv7l-linux = "0hpiirzy1921fca7b0bcrmc48r03r0lv0qph6xnqdkv66iplj1gz";
   }.${stdenv.hostPlatform.system} or (throw "unsupported system ${stdenv.hostPlatform.system}");
 
   url = {
