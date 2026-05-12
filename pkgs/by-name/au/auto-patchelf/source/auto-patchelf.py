@@ -192,7 +192,7 @@ def populate_cache(initial: list[Path], recursive: bool =False) -> None:
                     lib_dirs += rpath
                     soname_cache[(path.name, arch)].append((resolved.parent, osabi))
 
-            except ELFError:
+            except (ELFError, OSError):
                 # Not an ELF file in the right format
                 pass
 
@@ -341,7 +341,7 @@ def auto_patchelf_file(logger: Logger, path: Path, runtime_deps: list[Path], app
             file_dependencies = get_dependencies(elf) + get_dlopen_dependencies(elf)
             existing_rpaths = get_rpath(elf)
 
-    except ELFError:
+    except (ELFError, OSError):
         return []
 
     # these platforms are packaged in nixpkgs with ld.so in a separate derivation
